@@ -1,13 +1,14 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-  <title>Checklist de Colocación y Retiro de Equipo de Protección Personal con Kimono</title>
-  <meta name="author" content="cdeliens@gmail.com">
+    <title>Checklist de Colocación y Retiro de Equipo de Protección Personal con
+      Kimono</title>
+    <meta name="author" content="cdeliens@gmail.com">
 
-  <style>
+    <style>
       body {
   background: #eee;
   color: #444;
@@ -20,6 +21,28 @@
   margin: 0 auto;
   margin-top: 40px;
   border: 1px solid #cfcbcc;
+}
+.button {
+	display: inline-block;
+  margin: 0;
+  padding: 0.75rem 1rem;
+	border: 0;
+	border-radius: 0.317rem;
+	background-color: #aaa;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 1rem;
+  line-height: 1.5;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	cursor: pointer;
+	-webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  margin: 20px 0 20px;
+}
+
+.button:hover {
+	opacity: 0.85;
 }
 input {
   border: none;
@@ -82,32 +105,35 @@ ul li:last-child {
 
   </style>
 
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Checklist de Colocación y Retiro de</h1>
-<h1>Equipo de Protección Personal con Kimono</h1>
+    <h1>Equipo de Protección Personal con Kimono</h1>
+    <div class="container">
+      <h2>Colocación</h2>
+      <hr>
+      <ul id="placement-list"></ul>
+    </div>
 
-<div class="container">
-  <h2>Colocación</h2>
-  <hr>
-  <ul id="placement-list"></ul>
-</div>
+    <div class="container">
+      <h2>Retiro</h2>
+      <hr>
+      <ul id="withdraw-list"></ul>
 
-<div class="container">
-    <h2>Retiro</h2>
-    <hr>
-    <ul id="withdraw-list"></ul>
-  </div>
-  <script>
+    </div>
+    <button class="button" onclick="localStorage.clear();location.reload();">
+      Limpiar Checklist
+    </button>
+    <script>
       (function(){
   
   var placementList = document.querySelector('#placement-list'),
       withdrawList = document.querySelector('#withdraw-list')
 
   function store(list) {
-      window.localStorage.placementList = placementList.innerHTML;
-      window.localStorage.withdrawList = withdrawList.innerHTML;
+      window.localStorage.placementListKimono = placementList.innerHTML;
+      window.localStorage.withdrawListKimono = withdrawList.innerHTML;
   }
 
   function  handleClick(e){
@@ -131,8 +157,8 @@ ul li:last-child {
 
   
   function getValues() {
-    var storedPlacementList = window.localStorage.placementList;
-    var storedWithdrawList = window.localStorage.withdrawList;
+    var storedPlacementList = window.localStorage.placementListKimono;
+    var storedWithdrawList = window.localStorage.withdrawListBata;
     if(!storedPlacementList && !storedWithdrawList) {
       placementList.innerHTML = '<li>Se retira joyas, anillos aretes y pulseras.</li>'+
                        '<li>Realiza lavado de manos con agua y jabón.</li>'+
@@ -176,5 +202,5 @@ ul li:last-child {
   getValues();
 })();
   </script>
-</body>
+  </body>
 </html>
