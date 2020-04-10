@@ -11,6 +11,13 @@ body {
   }
   .logo {
     width: 100px;
+    margin: 100px auto 10px auto;
+  }
+  .footer {
+    text-align: center;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
   }
   .main-menu {
     text-align: center;
