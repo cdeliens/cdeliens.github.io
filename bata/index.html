@@ -105,8 +105,9 @@ ul li:last-child {
   var placementList = document.querySelector('#placement-list'),
       withdrawList = document.querySelector('#withdraw-list')
 
-  function store() {
+  function store(list) {
       window.localStorage.placementList = placementList.innerHTML;
+      window.localStorage.withdrawList = withdrawList.innerHTML;
   }
 
   function  handleClick(e){

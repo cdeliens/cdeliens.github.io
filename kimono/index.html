@@ -105,8 +105,9 @@ ul li:last-child {
   var placementList = document.querySelector('#placement-list'),
       withdrawList = document.querySelector('#withdraw-list')
 
-  function store() {
+  function store(list) {
       window.localStorage.placementList = placementList.innerHTML;
+      window.localStorage.withdrawList = withdrawList.innerHTML;
   }
 
   function  handleClick(e){
@@ -132,7 +133,7 @@ ul li:last-child {
   function getValues() {
     var storedPlacementList = window.localStorage.placementList;
     var storedWithdrawList = window.localStorage.withdrawList;
-    if(!storedPlacementList || !storedWithdrawList) {
+    if(!storedPlacementList && !storedWithdrawList) {
       placementList.innerHTML = '<li>Se retira joyas, anillos aretes y pulseras.</li>'+
                        '<li>Realiza lavado de manos con agua y jabón.</li>'+
                        '<li>Se colocan botas plásticas y se fija con cinta al pantalón de pijama.</li>'+
