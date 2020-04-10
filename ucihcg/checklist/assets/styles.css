@@ -64,6 +64,9 @@ body {
     margin: 0;
     padding: 0;
   }
+  b {
+    background-color: #26e400;
+  }
   ul li {
     font-weight: 600;
     border-bottom: 1px solid #cfcbcc;
