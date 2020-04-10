@@ -3,6 +3,15 @@ body {
     color: #444;
     font-family: 'Helvetica', arial, sans-serif;
   }
+  .header {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 60%;
+  }
+  .logo {
+    width: 100px;
+  }
   .main-menu {
     text-align: center;
   }
@@ -13,9 +22,13 @@ body {
   .main-menu img{
     width: 200px;
   }
+  .main-menu h2{
+    margin-bottom: 20px;
+  }
   .icon {
     text-align: center;
-    width: 30px;
+    width: 60px;
+    margin-top: 100px;
   }
   .container {
     background: #fff;
@@ -26,27 +39,10 @@ body {
     border: 1px solid #cfcbcc;
   }
   .button {
-      display: inline-block;
-    margin: 0;
-    padding: 0.75rem 1rem;
-      border: 0;
-      border-radius: 0.317rem;
-      background-color: #1e08e4;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-    line-height: 1.5;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      cursor: pointer;
-      -webkit-appearance: none;
-    -webkit-font-smoothing: antialiased;
-    margin: 50px 0 50px;
-  }
-  
-  .button:hover {
-      opacity: 0.85;
-  }
+    width: 300px;
+    height: 70px;
+    margin: 100px 70px 100px 0px;
+  }     
   input {
     border: none;
     display: block;
