@@ -17,7 +17,7 @@ body {
     padding: 0.75rem 1rem;
       border: 0;
       border-radius: 0.317rem;
-      background-color: #aaa;
+      background-color: #1e08e4;
       color: #fff;
       text-decoration: none;
       font-weight: 700;
@@ -27,7 +27,7 @@ body {
       cursor: pointer;
       -webkit-appearance: none;
     -webkit-font-smoothing: antialiased;
-    margin: 20px 0 20px;
+    margin: 50px 0 50px;
   }
   
   .button:hover {
@@ -56,8 +56,7 @@ body {
     padding: 0;
   }
   ul li {
-    color: #899098;
-    font-weight: 400;
+    font-weight: 600;
     border-bottom: 1px solid #cfcbcc;
     line-height: 2;
     padding: 12px 8px;
@@ -72,7 +71,7 @@ body {
   ul li:before {
     content: "\2022";
     padding: 10px 10px 0px 0px;
-    font-size: 20px;
+    font-size: 25px;
   }
   ul li:hover {
     cursor: pointer;
@@ -80,13 +79,16 @@ body {
   ul li:last-child {
     border-bottom: none;
   }
+  ul li:nth-child(even) {
+    background-color: #f4feff;
+  }
   .checked {
     color: green;
   }
   .checked:before {
     content: "\2713";
     padding: 10px 10px 0px 0px;
-    font-size: 20px;
+    font-size: 25px;
   }
   .checked:hover {
     text-decoration: none;
