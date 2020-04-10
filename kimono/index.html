@@ -1,0 +1,179 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Checklist de Colocación y Retiro de Equipo de Protección Personal con Kimono</title>
+  <meta name="author" content="cdeliens@gmail.com">
+
+  <style>
+      body {
+  background: #eee;
+  color: #444;
+  font-family: 'Helvetica', arial, sans-serif;
+}
+.container {
+  background: #fff;
+  width: 100%;
+  display: table;
+  margin: 0 auto;
+  margin-top: 40px;
+  border: 1px solid #cfcbcc;
+}
+input {
+  border: none;
+  display: block;
+  width: 98.4%;
+  line-height: 1.5;
+  padding: 8px 0 8px 10px;
+  border-bottom: 1px solid #cfcbcc;
+  outline: 0;
+}
+h1, h2 {
+  text-align: center;
+  margin-bottom: 0px;
+  line-height: 1;
+}
+h2 {
+  color: gray;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  color: #899098;
+  font-weight: 400;
+  border-bottom: 1px solid #cfcbcc;
+  line-height: 1.5;
+  padding: 8px 8px;
+  
+}
+ul li span {
+  padding-left: 20px;
+  white-space: pre-wrap;
+  display: flex;
+  
+}
+ul li:before {
+  content: "\2022";
+  padding: 10px 10px 0px 0px;
+  font-size: 20px;
+}
+ul li:hover {
+  cursor: pointer;
+}
+ul li:last-child {
+  border-bottom: none;
+}
+.checked {
+  color: green;
+}
+.checked:before {
+  content: "\2713";
+  padding: 10px 10px 0px 0px;
+  font-size: 20px;
+}
+.checked:hover {
+  text-decoration: none;
+}
+
+  </style>
+
+</head>
+
+<body>
+    <h1>Checklist de Colocación y Retiro de</h1>
+<h1>Equipo de Protección Personal con Kimono</h1>
+
+<div class="container">
+  <h2>Colocación</h2>
+  <hr>
+  <ul id="placement-list"></ul>
+</div>
+
+<div class="container">
+    <h2>Retiro</h2>
+    <hr>
+    <ul id="withdraw-list"></ul>
+  </div>
+  <script>
+      (function(){
+  
+  var placementList = document.querySelector('#placement-list'),
+      withdrawList = document.querySelector('#withdraw-list')
+
+  function store() {
+      window.localStorage.placementList = placementList.innerHTML;
+  }
+
+  function  handleClick(e){
+      var t = e.target;
+      if(t.classList.contains('checked')){
+        t.classList.remove('checked');
+      } else {
+        t.classList.add('checked');
+      }
+      store();
+  }
+  
+  placementList.addEventListener('click',function(e){
+      handleClick(e)
+  },false)
+
+  withdrawList.addEventListener('click',function(e){
+      handleClick(e)
+  },false)
+  
+
+  
+  function getValues() {
+    var storedPlacementList = window.localStorage.placementList;
+    var storedWithdrawList = window.localStorage.withdrawList;
+    if(!storedPlacementList || !storedWithdrawList) {
+      placementList.innerHTML = '<li>Se retira joyas, anillos aretes y pulseras.</li>'+
+                       '<li>Realiza lavado de manos con agua y jabón.</li>'+
+                       '<li>Se colocan botas plásticas y se fija con cinta al pantalón de pijama.</li>'+
+                       '<li>Se coloca el primer par de guantes fijado con cinta a piel.</li>'+
+                       '<li>Se coloca el kimono y Cierra el Zipper completamente.</li>'+
+                       '<li>Se colocan botas de tela sobre el kimono fíjelas con lazo en la pantorrilla.</li>'+
+                       '<li>Se coloca segundo par de guantes y se fija con cinta al kimono.</li>'+
+                       '<li>Se coloca bata, se sujeta el velcro de cuello y realiza lazo en la cintura.</li>'+
+                       '<li>Se coloca mascarilla quirúrgica N-95 según técnica correspondiente.</li>'+
+                       '<li>Realiza test de fuga de aire y sello adecuado con ambas mascarillas, quirúrgica N-95.</li>'+
+                       '<li>Se coloca lentes de protección (tipo aviador) y los ajusta.</li>'+
+                       '<li>Se coloca gorro del kimono, cierra completamente cremallera y cubre al máximo el rostro.</li>'+
+                       '<li>Coloca gorro quirúrgico y cubre con este los espacios sin protección.</li>'+
+                       '<li>Se coloca el tercer par de guantes quirúrgicos y los fija con cinta a la bata.</li>'+
+                       '<li>Se coloca mascara de protección final.</li>'+
+                       '<li>Ingresa a la unidad.</li>';
+      withdrawList.innerHTML = '<li>Realiza lavado de manos con agua y jabón.</li>'+
+                       '<li>Retira mascarilla frontal, sujetándola por el frente, deposítela en el recipiente de agua jabonosa.</li>'+
+                       '<li>Retira guantes Nº 3 con técnica.</li>'+
+                       '<li>Retira gorro quirúrgico, con técnica usando solo dos dedos y por dentro del mismo, sin tocar la parte de fuera.</li>'+
+                       '<li>Se coloca solución hidroalcohólica o lavado de manos con agua y jabón.</li>'+
+                       '<li>Retira bata, soltando el lazo de la cintura y posterior el velcro del cuello, deslizando las manos por dentro de la manga y arrollando la bata hacia adentro alejado del cuerpo.</li>'+
+                       '<li>Retira liberando muñecas de la bata de la parte más distal.</li>'
+                       '<li>Se coloca solución hidroalcohólica o lavado de manos con agua y jabón.</li>'+
+                       '<li>Retira las botas soltando los lazos con una sola mano y depositándolas en canasta correspondiente.</li>'+
+                       '<li>Se coloca solución hidroalcohólica o lavado de manos con agua y jabón.</li>'+
+                       '<li>Bajar cremallera del frente del kimono completamente.</li>'+
+                       '<li>Retira gorro del kimono metiendo las manos por el cuello abriendo el gorro y liberando los hombros de arriba hacia abajo con movimientos suaves.</li>'+
+                       '<li>Sale de la habitación y retira botas plásticas.</li>'+
+                       '<li>Se coloca solución hidroalcohólica.</li>'+
+                       '<li>Retira guantes Nº 1 según la técnica.</li>'+
+                       '<li>Se realiza lavado de manos con agua y jabón técnica médica.</li>';
+    }
+
+    else {
+      placementList.innerHTML = storedPlacementList;
+      withdrawList.innerHTML = storedWithdrawList;
+    }
+  }
+  getValues();
+})();
+  </script>
+</body>
+</html>
