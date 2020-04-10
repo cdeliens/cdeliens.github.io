@@ -72,6 +72,7 @@ body {
     content: "\2022";
     padding: 10px 10px 0px 0px;
     font-size: 25px;
+    vertical-align: middle;
   }
   ul li:hover {
     cursor: pointer;
